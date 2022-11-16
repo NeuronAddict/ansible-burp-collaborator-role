@@ -1,0 +1,8 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+  tasks:
+    - name: "Include neuronaddict.burpcollaborator"
+      include_role:
+        name: "neuronaddict.burpcollaborator"

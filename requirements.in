@@ -1,0 +1,5 @@
+pip-tools
+ansible
+ansible-lint
+molecule
+molecule-vagrant

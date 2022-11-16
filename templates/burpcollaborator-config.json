@@ -1,0 +1,67 @@
+{
+    "serverDomain": "{{ server_domain }}",
+    "workerThreads": 10,
+    "eventCapture": {
+        "localAddress": "{{ localAddress | default(ansible_all_ipv4_addresses[0]) }}",
+        "publicAddress": "{{ public_address }}",
+        "http": {
+            "ports": 80
+        },
+        "https": {
+            "ports": 443
+        },
+        "smtp": {
+            "ports": [
+                25,
+                587
+            ]
+        },
+        "smtps": {
+            "ports": 465
+        },
+        "ssl": {
+            "certificateFiles": [
+                "path_to_key_file",
+                "path_to_certificate_file"
+            ]
+        }
+    },
+    "polling": {
+        "localAddress": "Local_IP",
+        "publicAddress": "Collaborator_External_IP",
+        "http": {
+            "port": 9090
+        },
+        "https": {
+            "port": 9443
+        },
+        "ssl": {
+            "certificateFiles": [
+                "path_to_key_file",
+                "path_to_certificate_file"
+            ]
+        }
+    },
+    "metrics": {
+        "path": "url_to_metrics",
+        "addressWhitelist": [
+            "21.10.23.0/24"
+        ]
+    },
+    "dns": {
+        "interfaces": [
+            {
+                "name": "NS_record_label_1",
+                "localAddress": "Local_IP_1",
+                "publicAddress": "External_IP_Nameserver_A_Record1"
+            },
+            {
+                "name": "NS_record_label_2",
+                "localAddress": "Local_IP_2",
+                "publicAddress": "External_IP_Nameserver_A_Record2"
+            }
+        ],
+        "ports": 53
+    },
+    "logLevel": "INFO"
+}

@@ -1,0 +1,12 @@
+[Unit]
+Description=Burp collaborator
+Requires=systemd.network
+Documentation=https://www.rsyslog.com/doc/
+Documentation=https://portswigger.net/burp/documentation/collaborator/deploying#collaborator-configuration-file
+
+[Service]
+ExecStart=java -jar {{ dest }}/burp-collaborator.jar --config=/etc/burp-collaborator.json
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
