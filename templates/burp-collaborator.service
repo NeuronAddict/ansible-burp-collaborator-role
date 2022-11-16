@@ -1,7 +1,7 @@
 [Unit]
 Description=Burp collaborator
 Requires=systemd.network
-Documentation=https://www.rsyslog.com/doc/
+Documentation=https://github.com/NeuronAddict/ansible-burp-collaborator-role
 Documentation=https://portswigger.net/burp/documentation/collaborator/deploying#collaborator-configuration-file
 
 [Service]
