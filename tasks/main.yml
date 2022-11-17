@@ -1,7 +1,7 @@
 ---
 
 - name: Install collaborator
-  copy:
+  ansible.builtin.copy:
     src: files/burp-collaborator.jar
     dest: '{{ dest }}/burp-collaborator.jar'
     owner: root
@@ -9,7 +9,7 @@
     mode: 'u=rwx,g=rx,o=rx'
 
 - name: Install collaborator
-  copy:
+  ansible.builtin.copy:
     src: files/burp-collaborator.jar
     dest: '{{ dest }}/burp-collaborator.jar'
     owner: root
@@ -17,7 +17,7 @@
     mode: 'u=rwx,g=rx,o=rx'
 
 - name: Install configuration
-  template:
+  ansible.builtin.template:
     src: templates/burp-collaborator-config.json
     dest: /etc/burp-collaborator-config.json
     owner: root
@@ -26,7 +26,7 @@
   notify: restart burp-collaborator.service
 
 - name: Install systemd service
-  copy:
+  ansible.builtin.copy:
     src: templates/burp-collaborator.service
     dest: /etc/systemd/system/burp-collaborator.service
     owner: root
@@ -35,7 +35,7 @@
   notify: Restart burp-collaborator.service
 
 - name: Start burp-collaborator.service
-  systemd:
+  ansible.builtin.systemd:
     name: burp-collaborator.service
     daemon_reload: true
     enabled: true
