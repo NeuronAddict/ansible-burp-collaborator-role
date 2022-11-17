@@ -1,5 +1,5 @@
 ---
-- name: restart burp-collaborator.service
+- name: Restart burp-collaborator.service
   systemd:
     name: burp-collaborator.service
     daemon_reload: true

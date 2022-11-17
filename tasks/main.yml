@@ -32,9 +32,9 @@
     owner: root
     group: root
     mode: 'u=rwx,g=rx,o=rx'
-  notify: restart burp-collaborator.service
+  notify: Restart burp-collaborator.service
 
-- name: start burp-collaborator.service
+- name: Start burp-collaborator.service
   systemd:
     name: burp-collaborator.service
     daemon_reload: true
