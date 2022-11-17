@@ -1,6 +1,6 @@
 ---
 - name: Restart burp-collaborator.service
-  systemd:
+  ansible.builtin.systemd:
     name: burp-collaborator.service
     daemon_reload: true
     enabled: true

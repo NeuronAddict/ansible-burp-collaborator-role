@@ -7,5 +7,5 @@
     public_address: 10.10.10.10
   tasks:
     - name: "Include neuronaddict.burpcollaborator"
-      include_role:
+      ansible.builtin.include_role:
         name: "neuronaddict.burpcollaborator"
